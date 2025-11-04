@@ -27,7 +27,7 @@ It's equal parts professional portfolio and personal calling card. Text only, pl
 
 ### Live Demo
 
-**🔗** https://bearicide.github.io/mattbaier-personalwebsite/  or https://bearicide.github.io
+**🔗** https://bearicide.github.io/mattbaier-personalwebsite/ 
 
 ### Local Run (So far away...)
 
