@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trackside Café | Flushing, MI</title>
+  <meta name="description" content="Trackside Café in Flushing, MI — hometown breakfasts, fresh pies, strong coffee. Open Tues–Sun 6am–2pm." />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #333;
+      --muted: #666;
+      --brand: #fbbf24;
+      --red: #c0392b;
+      --red-light: #e74c3c;
+      --surface: #ffffff;
+      --shadow-strong: 0 12px 24px rgba(0,0,0,0.25);
+      --shadow: 0 8px 18px rgba(0,0,0,.15);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; border-radius: var(--radius); box-shadow: var(--shadow); border: 3px solid rgba(192,57,43,.25); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    header { position: sticky; top: 0; z-index: 1000; background: var(--red); color: #fff; box-shadow: var(--shadow-strong); border-bottom: 5px solid var(--brand); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1rem; }
+    .brand { display: flex; align-items: center; gap: .5rem; font-weight: 900; font-size: 1.8rem; color: var(--brand); text-shadow: 2px 2px 6px rgba(0,0,0,.4); font-family: 'Dancing Script', cursive; }
+    .brand img { height: 45px; border-radius: 6px; box-shadow: var(--shadow); border: 2px solid var(--brand); }
+    .nav ul { display: flex; gap: 1rem; margin: 0; padding: 0; list-style: none; flex-wrap: wrap; align-items: center; }
+    .nav a { font-size: 1rem; letter-spacing: .06em; text-transform: capitalize; opacity: .9; color: #fff; border: 2px solid transparent; padding: 4px 8px; border-radius: 8px; transition: all .3s; font-family: 'Georgia', serif; }
+    .nav a:hover, .nav a:focus-visible { opacity: 1; border: 2px solid var(--brand); box-shadow: 0 0 8px var(--brand); background: rgba(0,0,0,0.2); }
+    .hero { min-height: 80vh; display: grid; place-items: center; text-align: center; background: linear-gradient(rgba(192,57,43,.6), rgba(44,62,80,.7)), url('assets/diningroom.jpg') center/cover no-repeat; position: relative; overflow: hidden; border-bottom: 5px solid var(--brand); box-shadow: var(--shadow-strong); }
+    .hero::after { content: ""; position: absolute; inset: 0; background: url('assets/logo.jpg') center/200px auto no-repeat; opacity: 0.1; animation: pulse 6s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.1} 50%{opacity:.25} }
+    .hero-inner { background: rgba(0,0,0,.5); padding: 3rem; border-radius: var(--radius); backdrop-filter: saturate(130%) blur(5px); max-width: 90%; border: 4px solid var(--brand); box-shadow: var(--shadow-strong); position: relative; z-index: 1; }
+    .hero h1 { margin: 0 0 .75rem; color: var(--brand); font-family: 'Dancing Script', cursive; font-weight: 600; font-size: clamp(3rem, 6vw, 4.5rem); text-shadow: 3px 3px 8px rgba(0,0,0,.8); letter-spacing: 0.5px; }
+    .hero-logo { width: 160px; margin: 0 auto 1rem; border-radius: 14px; box-shadow: 0 0 20px rgba(0,0,0,.6); border: 3px solid var(--brand); }
+    .hero p { color: #fff; font-family: 'Georgia', serif; font-size: clamp(1rem, 2vw, 1.3rem); margin: 1rem 0 1.5rem; text-shadow: 1px 1px 4px rgba(0,0,0,.6); }
+    .hero-buttons { display: flex; justify-content: center; }
+    section { padding: 3rem 1rem; border-bottom: 4px solid var(--red-light); box-shadow: 0 6px 12px rgba(0,0,0,.1); }
+    h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); margin: 0 0 1rem; color: var(--red); border-left: 8px solid var(--brand); padding-left: .5rem; font-family: 'Playfair Display', serif; text-shadow: 1px 1px 4px rgba(0,0,0,.2); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow-strong); border: 3px solid var(--red-light); transition: transform .3s ease, box-shadow .3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(192,57,43,.3); }
+    .card > div { padding: 1rem 1.1rem 1.25rem; }
+    .card h3 { margin: .5rem 0 .25rem; font-size: 1.125rem; color: var(--red); font-family: 'Playfair Display', serif; text-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+    footer { background: var(--red); color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-top: 5px solid var(--brand); box-shadow: 0 -6px 18px rgba(0,0,0,.25); font-family: 'Georgia', serif; }
+    footer p { margin: .25rem 0; }
+    footer .accent { color: var(--brand); margin-top: .35rem; text-shadow: 1px 1px 3px rgba(0,0,0,.3); }
+    .btn { display: inline-block; padding: .75rem 1.5rem; border-radius: 999px; font-weight: 700; background: var(--red-light); color: #fff; box-shadow: 0 6px 14px rgba(0,0,0,.3); border: 3px solid var(--brand); transition: all .3s ease; font-family: 'Georgia', serif; }
+    .btn:hover { filter: brightness(1.1); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.4); }
+    :target { scroll-margin-top: 78px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav container">
+      <div class="brand"><img src="assets/logo.jpg" alt="Trackside Café logo">Trackside Café</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.facebook.com/100089605044192" target="_blank">Facebook</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Trackside Café</h1>
+        <img src="assets/logo.jpg" alt="Trackside Café logo" class="hero-logo">
+        <p>Flushing’s Hometown Breakfast Stop<br>Where every morning starts on the right track.</p>
+        <div class="hero-buttons">
+          <a class="btn" href="https://www.facebook.com/100089605044192" target="_blank">Check out our Facebook!</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="menu">
+      <h2>Our Menu</h2>
+      <div class="grid">
+        <article class="card"><div><h3>Country-Fried Pork Fritter</h3><p>Poached eggs, crispy hashbrowns & biscuit. Classic comfort.</p></div></article>
+        <article class="card"><div><h3>Fluffy Omelets</h3><p>Choose from a variety of fillings. Served with toast & hashbrowns.</p></div></article>
+        <article class="card"><div><h3>Chicken & Dumplings</h3><p>Hearty homemade soup full of flavor — a midday favourite.</p></div></article>
+        <article class="card"><div><h3>Wild Bill’s Pulled Pork Sandwich</h3><p>Smoky pulled pork on fresh bread — a local lunch pick.</p></div></article>
+        <article class="card"><div><h3>Homemade Pies</h3><p>Rotating flavours like apple, cherry, coconut cream — baked fresh.</p></div></article>
+        <article class="card"><div><h3>Biscuits & Gravy</h3><p>Fluffy buttermilk biscuits covered in hearty sausage gravy. A true Michigan breakfast staple.</p></div></article>
+      </div>
+    </section>
+
+    <section class="container" id="story">
+      <h2>Our Story</h2>
+      <p>Trackside Café is a true labor of love from Bill and Tammy, two lifelong Michiganders who have been serving breakfast with heart for decades. Before opening the doors here in Flushing, they ran the beloved Lennon Café — a small-town favorite known for its warmth, laughter, and plates that always left folks full and happy. When the time came for a new adventure, they brought everything they learned from Lennon right down the tracks to create something even more special.</p>
+      <p>Today, Trackside blends that same family-first energy with a modern hometown feel. It’s where neighbors meet, coffee never stops pouring, and you’re treated like part of the family from the moment you walk in. Every omelet flipped, pie baked, and pot of soup stirred still carries the spirit of that first café — honest food made with care, served by people who love what they do.</p>
+      <div class="grid">
+        <img class="card" src="assets/bill-tammy.jpg" alt="Bill and Tammy - owners of Trackside Café">
+      </div>
+    </section>
+
+    <section class="container" id="gallery">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <img class="card" src="assets/counter.jpg" alt="Coffee counter area">
+        <img class="card" src="assets/diningroom.jpg" alt="Dining area with guests">
+        <img class="card" src="assets/omelet1.jpg" alt="Omelet breakfast">
+        <img class="card" src="assets/omelet2.jpg" alt="Hashbrowns and biscuit">
+        <img class="card" src="assets/chickensoup.jpg" alt="Chicken and dumpling soup">
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <h2>Contact</h2>
+      <p><strong>Address:</strong> 424 Emily St, Flushing, MI<br><strong>Phone:</strong> <a href="tel:+18104879396">(810) 487-9396</a><br><strong>Hours:</strong> Tues–Sun 6 am – 2 pm • Closed Mondays</p>
+      <p>Follow us on <a href="https://www.facebook.com/100089605044192" target="_blank">Facebook</a> for daily specials and updates.</p>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.jpg" alt="Trackside Café logo" style="height:50px; margin-bottom:.5rem; border:3px solid var(--brand); box-shadow:var(--shadow-strong); border-radius:10px;">
+    <p>© 2025 Trackside Café • 424 Emily St, Flushing, MI • (810) 487-9396</p>
+    <p>Open Tues–Sun 6 am – 2 pm • Closed Mondays</p>
+    <p class="accent">Run by family, powered by coffee.</p>
+  </footer>
+</body>
+</html>
